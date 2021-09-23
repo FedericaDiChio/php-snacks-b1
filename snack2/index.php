@@ -21,9 +21,17 @@ require_once "partials/data.php";
 <body>
 <ul>
 <?php foreach ($students as $student => $grades) { ?>
-    <li>Studente: </li>
-    <address><?php echo $student ?></address>
-    <li>Media dei voti: <?php echo array_sum($grades) /3;?></li>  
+    <li><strong> Studente: </strong></li>
+    <em><?php echo $student ?></em>
+
+    <li><strong>Voti: </strong></li>
+    <?php foreach ($grades as $grade) { ?>
+        <span><?php echo $grade ?></span>
+    <?php } ?>
+
+    <li><strong>Media dei voti: </strong></li>
+        <?php echo array_sum($grades) /3;?>  
+    <hr>
 <?php } ?>
 </ul>
 </body>
