@@ -5,7 +5,8 @@ tenendo conto che l’array non dovrà contenere lo stesso numero più di una vo
 Stampare i numeri in pagina. -->
 
 <?php 
-require_once "partials/function.php"
+require_once "partials/function.php";
+$random_integers = get_random_number(1, 100, 15);
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +18,8 @@ require_once "partials/function.php"
     <title>Document</title>
 </head>
 <body>
-    <?php foreach ($random_numbers as $random_number) { ?>
-    <span><?php echo $random_number ?> </span>
+    <?php foreach ($random_integers as $random_integer) { ?>
+    <span><?php echo $random_integer ?> </span>
     <?php } ?>
 </body>
 </html>

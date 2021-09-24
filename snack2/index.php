@@ -7,6 +7,7 @@ Stampare Nome, Cognome e la media dei voti di ogni alunno. -->
 
 <?php
 require_once "partials/data.php";
+require_once "partials/function.php"
 ?>
 
 
@@ -20,17 +21,12 @@ require_once "partials/data.php";
 </head>
 <body>
 <ul>
-<?php foreach ($students as $student => $grades) { ?>
+<?php foreach ($students as $student) { ?>
     <li><strong> Studente: </strong></li>
-    <em><?php echo $student ?></em>
-
-    <li><strong>Voti: </strong></li>
-    <?php foreach ($grades as $grade) { ?>
-        <span><?php echo $grade ?></span>
-    <?php } ?>
+    <em><?php echo $student["name"] . " " . $student["surname"] ?></em>
 
     <li><strong>Media dei voti: </strong></li>
-        <?php echo array_sum($grades) /3;?>  
+        <?php echo get_average_grades($student["grades"]) ?>  
     <hr>
 <?php } ?>
 </ul>
